@@ -114,14 +114,14 @@ def shortest_path(source, target):
         # Get all neighbors of the current actor
         for movie_id, neighbor_id in neighbors_for_person(current_actor):
             if neighbor_id == target:
-                return path + [(movie_id,neighbor_id)]
+                return path + [(movie_id, neighbor_id)]
             if neighbor_id not in explored and not any(neighbor_id == actor for actor in frontier):
                 # Add the neighbor to the frontier
-                frontier.append((neighbor_id, path + [(movie_id ,neighbor_id)]))
-
+                frontier.append((neighbor_id, path + [(movie_id, neighbor_id)]))
 
     # If no path is found
     return None
+
 
 def person_id_for_name(name):
     """
