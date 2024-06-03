@@ -2,8 +2,6 @@ import csv
 import sys
 
 
-
-
 from util import Node, StackFrontier, QueueFrontier
 
 # Maps names to a set of corresponding person_ids
@@ -106,21 +104,21 @@ def shortest_path(source, target):
     while frontier:
         current_actor,path = frontier.popleft()
 
-        # If the current actor is the target, return the path    
+        # If the current actor is the target, return the path
         if current_actor == target:
             return path
-    
+
         # Mark the current actor explored[()]
         explored.add(current_actor)
 
         # Get all neighbors of the current actor
         for movie_id, neighbor_id in neighbors_for_person(current_actor):
             if neighbor_id == target:
-                return path + [(movie_id,neighbor_id)] 
+                return path + [(movie_id,neighbor_id)]
             if neighbor_id not in explored and not any(neighbor_id == actor for actor in frontier):
                 # Add the neighbor to the frontier
                 frontier.append((neighbor_id, path + [(movie_id,neighbor_id)]))
-            
+
 
     # If no path is found
     return None
