@@ -95,7 +95,7 @@ def shortest_path(source, target):
     from collections import deque
 
     # Queue for BFS
-    frontier= deque([(source, [])])
+    frontier = deque([(source, [])])
 
     # Explored set
     explored = set()
