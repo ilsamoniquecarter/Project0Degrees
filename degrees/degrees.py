@@ -102,7 +102,7 @@ def shortest_path(source, target):
 
     # BFS loop
     while frontier:
-        current_actor,path = frontier.popleft()
+        current_actor, path = frontier.popleft()
 
         # If the current actor is the target, return the path
         if current_actor == target:
