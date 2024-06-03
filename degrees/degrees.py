@@ -100,7 +100,7 @@ def shortest_path(source, target):
     # Explored set
     explored = set()
 
-    #BFS loop
+    # BFS loop
     while frontier:
         current_actor,path = frontier.popleft()
 
